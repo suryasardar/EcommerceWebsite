@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import axios  from 'axios';
+import axios from 'axios';
+import {useNavigate } from 'react-router-dom';
 
 const LoginPageContainer = styled.div`
 display: flex;
@@ -110,6 +111,11 @@ const  Signup = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  const navigate=useNavigate()
+  const siggnedup =async () => {
+    navigate('/Logins');
+  }
+
   const handleLogin = async(e) => {
     e.preventDefault();
     console.log('Logging in with:', username, password);
@@ -148,7 +154,7 @@ const  Signup = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <SubmitButton type="submit">Signup</SubmitButton>
+        <SubmitButton type="submit" onClick={siggnedup}>Signup</SubmitButton>
       </LoginForm>
     </LoginPageContainer>
   );

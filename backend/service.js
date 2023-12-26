@@ -25,7 +25,7 @@ const verifyToken = (req, res, next) => {
   console.log(token, 'k');
   // const {authToken} = req.cookies;
 
-  console.log(authToken);
+  // console.log(authToken);
 
   if (!authToken) {
     return res.status(401).json({ message: "Unauthorized" });
@@ -128,7 +128,7 @@ module.exports = {
   
       // Perform the deletion in the database
       pool.query(
-        'DELETE FROM cart WHERE name = ?',
+        'SET SQL_SAFE_UPDATES = 0; DELETE FROM cart WHERE name = ?; SET SQL_SAFE_UPDATES = 1;',
         [itemName],
         (error, results, fields) => {
           if (error) {
@@ -136,7 +136,7 @@ module.exports = {
             return res.status(500).json({ error: 'Internal Server Error', details: error.message });
           }
   
-          console.log(results);
+          // console.log(results);
           res.json({ message: 'Item deleted successfully' });
         }
       );
@@ -163,7 +163,7 @@ module.exports = {
               console.error('Error executing query:', error);
               return res.status(500).json({ error: "Internal Server Error", details: error.message });
             }
-            console.log(results);
+            // console.log(results);
             res.json({ message: "Item inserted successfully" });
           }
         );
@@ -183,7 +183,7 @@ module.exports = {
   productsI: async (req, res) => {
     try {
       const { id, name, price } = req.body;
-      console.log(id, name, price);
+      // console.log(id, name, price);
 
       pool.query(
         `INSERT INTO product(id, name, price) VALUES (${id},'${name}','${price},')`,
