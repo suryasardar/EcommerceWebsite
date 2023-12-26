@@ -22,6 +22,7 @@ const poolQuery = util.promisify(pool.query).bind(pool);
 
 const verifyToken = (req, res, next) => {
   const token = req.cookies.authToken;
+  console.log(token, 'k');
   // const {authToken} = req.cookies;
 
   console.log(authToken);
