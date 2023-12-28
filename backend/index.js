@@ -1,8 +1,8 @@
 //start
 
+const os = require('os');
 const totalCPUS = os.cpus().length;
 const express = require("express");
-const os = require('os');
 // require("dotenv").config();
 const dotenv = require('dotenv');
 const cors = require("cors");
