@@ -1,6 +1,6 @@
-require("dotenv").config();
 const express = require("express");
 const os = require('os');
+require("dotenv").config();
 const cors = require("cors");
 const app = express();
 const totalCPUS = os.cpus().length;
