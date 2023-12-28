@@ -5,7 +5,7 @@ const os = require('os');
 const cors = require("cors");
 const app = express();
 const totalCPUS = os.cpus().length;
-console.log(totalCPUS);
+// console.log(totalCPUS);
 const PORT=process.env.PORT|| 4000
 
 // Middleware for parsing request bodies

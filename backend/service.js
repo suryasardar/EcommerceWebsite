@@ -11,7 +11,7 @@ const poolQuery = util.promisify(pool.query).bind(pool);
     console.error("Error connecting to MySQL database:", err);
     process.exit(1); // Terminate the application
   } else {
-    console.log("Connected to MySQL database");
+    // console.log("Connected to MySQL database");
     connection.release(); // Release the connection back to the pool
   }
 });
