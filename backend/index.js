@@ -3,7 +3,7 @@ const os = require('os');
 require("dotenv").config();
 const cors = require("cors");
 const app = express();
-const totalCPUS = os.cpus().length;
+// const totalCPUS = os.cpus().length;
 // console.log(totalCPUS);
 const PORT=process.env.APP_PORT|| 4000
 
