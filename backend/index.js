@@ -1,5 +1,6 @@
 //start
 
+const totalCPUS = os.cpus().length;
 const express = require("express");
 const os = require('os');
 // require("dotenv").config();
@@ -7,7 +8,6 @@ const dotenv = require('dotenv');
 const cors = require("cors");
 const app = express();
 dotenv.config();
-// const totalCPUS = os.cpus().length;
 // console.log(totalCPUS);
 const PORT=process.env.APP_PORT|| 4000
 
