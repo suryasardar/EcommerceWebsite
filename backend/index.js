@@ -6,6 +6,7 @@ const cors = require("cors");
 const app = express();
 const totalCPUS = os.cpus().length;
 console.log(totalCPUS);
+const PORT=process.env.PORT|| 4000
 
 // Middleware for parsing request bodies
 const cookieParser = require("cookie-parser");
@@ -27,8 +28,8 @@ app.use((err, req, res, next) => {
 });
 
 // Start the server
-app.listen(process.env.APP_PORT, () => {
-  console.log("Server is listening at http://localhost:", process.env.APP_PORT);
+app.listen(PORT, () => {
+  console.log("Server is listening at http://localhost:",PORT);
 });
 
 module.exports = app;
