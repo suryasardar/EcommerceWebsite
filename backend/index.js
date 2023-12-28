@@ -1,11 +1,10 @@
 //start
 
-const os = require('os');
-const totalCPUS = os.cpus().length;
+
+const cors = require("cors");
 const express = require("express");
 // require("dotenv").config();
 const dotenv = require('dotenv');
-const cors = require("cors");
 const app = express();
 dotenv.config();
 // console.log(totalCPUS);
