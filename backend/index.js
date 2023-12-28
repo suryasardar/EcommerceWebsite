@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 const totalCPUS = os.cpus().length;
 // console.log(totalCPUS);
-const PORT=process.env.PORT|| 4000
+const PORT=process.env.APP_PORT|| 4000
 
 // Middleware for parsing request bodies
 const cookieParser = require("cookie-parser");
